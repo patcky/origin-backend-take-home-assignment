@@ -1,5 +1,1 @@
-__pycache__
-dev
-old
-.env.dev
-*.sqlite3
+old_
