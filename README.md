@@ -70,6 +70,6 @@ I was planning to write about all the technical decisions I made along the proje
 - Include validation in the serializers to not accept the request if the `car` and `home` fields are not in the request;
 - Add more tests, preferably for each class/method in the serializers, views, models and services
 - Add token authentication
-- Take credencials off the settings file
+- Take credentials off the settings file
 - Add data persistence (DB logic)
 - Write strategy and technical decisions
