@@ -1,6 +1,6 @@
 # Insurance Quote API
 
-This job aims to group many different tasks to upload models from mybox to netsuite via API. It is grouped as a single job in order to reuse common code between jobs, as the netsuite api client.
+This project was made as a response to Origin's backend challenge.
 
 ## Instalation
 
@@ -51,10 +51,6 @@ If any doubts/bugs/existential angst come from using this project, please contac
 If you feel like contributing to this project, just open a PR, tag me and I will review and integrate any relevant changes.
 
 Thanks! (:
-
-## License
-
-This job manages sensitive internal data, therefore all usage must be previously approved by Loft Brasil Ltda.
 
 ## Authors
 
