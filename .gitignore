@@ -2,5 +2,4 @@ __pycache__
 dev
 old_
 .env
-.vagrant
 *.sqlite3
