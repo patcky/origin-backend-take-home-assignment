@@ -6,6 +6,7 @@ from insurance_quote_api.models import *
 class TestInsuranceQuoteService(TestCase):
     @classmethod
     def setUp(self):
+        # I did the tests in normal pytest format, now I am trying to adapt into django, still wip
         return AnalysisData(
             age=35,
             dependents=2,

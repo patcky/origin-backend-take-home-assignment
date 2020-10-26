@@ -20,7 +20,7 @@ To install all dependencies on the virtual environment, run `pip3 install -r req
 
 ### Running tests
 
-Once inside the image's shell, run `python manage.py test`.
+Once inside the image's shell, run `python manage.py test`. (Warning: tests are still incomplete at the moment)
 
 ### Django commands
 
