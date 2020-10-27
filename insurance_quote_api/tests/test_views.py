@@ -20,23 +20,23 @@ class TestInsuranceQuoteViews(TestCase):
         self.url = reverse('quote')
 
     def test_make_post_call_with_empty_data(self):
-        # try making a post call with empty data and checking if the view returns errors
+        """try making a post call with empty data and checking if the view returns status 400"""
         response = self.client.post(self.url)
         assert response.status_code == 400
 
     def test_make_post_call_with_complete_data(self):
-        # try making a post call with complete data and checking if the view returns complete result
+        """try making a post call with complete data and checking if the view returns status 200"""
         response = self.client.post(self.url, json.dumps(self.user_data), content_type='application/json')
         assert response.status_code == 200
 
     def test_make_post_call_with_incomplete_data(self):
-        # try making a post call with incomplete data and checking if the view returns errors
+        """try making a post call with incomplete data and checking if the view returns status 400"""
         del self.user_data["age"]
         del self.user_data["dependents"]
         response = self.client.post(self.url, json.dumps(self.user_data), content_type='application/json')
         assert response.status_code == 400
 
     def test_make_get_call(self):
-        # try making a get call and checking if the view returns HTTP method not allowed
+        """try making a get call and checking if the view returns status 405"""
         response = self.client.get(self.url)
         assert response.status_code == 405
