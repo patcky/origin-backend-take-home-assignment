@@ -1,25 +1,41 @@
 from django.test import TestCase
 
-from insurance_quote_api.serializers import *
+from insurance_quote_api.serializers import QuoteSerializer
 
 class TestInsuranceQuoteSerializers(TestCase):
     @classmethod
     def setUp(self):
         # generate data sample that will be used in other methods
-        pass
+        self.user_data = {
+            "age": 35,
+            "dependents": 2,
+            "house": {"ownership_status": "owned"},
+            "income": 0,
+            "marital_status": "married",
+            "risk_questions": [0, 1, 0],
+            "vehicle": {"year": 2018}
+        }
 
     def test_validate_empty_data(self):
-        # try passing empty data and checking if the serializer returns an error with the missing fields
-        pass
+        # try passing empty data and checking if the serializer is valid
+        self.user_data = {}
+        serializer = QuoteSerializer(data=self.user_data)
+        assert serializer.is_valid() == False
 
     def test_validate_incomplete_data(self):
         # try passing incomplete data and checking if the serializer returns an error with the missing fields
-        pass
+        del self.user_data["age"]
+        del self.user_data["dependents"]
+        serializer = QuoteSerializer(data=self.user_data)
+        assert serializer.is_valid() == False
 
     def test_validate_complete_data(self):
         # try passing data with complete data and checking if the serializer validates the fields
-        pass
+        serializer = QuoteSerializer(data=self.user_data)
+        assert serializer.is_valid() == True
 
     def test_validate_wrong_format_data(self):
         # try passing wrong format data and checking if the serializer returns an error
-        pass
+        self.user_data["dependents"] = "wrong format"
+        serializer = QuoteSerializer(data=self.user_data)
+        assert serializer.is_valid() == False

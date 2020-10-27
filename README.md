@@ -64,7 +64,7 @@ I was planning to write about all the technical decisions I made along the proje
 
 - Adapt models' structures to Django's format
 - Include validation in the serializers to not accept the request if the `car` and `home` fields are not in the request;
-- Add more tests, preferably for each class/method in the serializers, views, models and services
+- Add more tests
 - Add token authentication
 - Take credentials off the settings file
 - Add data persistence (DB logic)
