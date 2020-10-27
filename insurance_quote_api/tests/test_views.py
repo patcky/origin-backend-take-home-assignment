@@ -36,6 +36,13 @@ class TestInsuranceQuoteViews(TestCase):
         response = self.client.post(self.url, json.dumps(self.user_data), content_type='application/json')
         assert response.status_code == 400
 
+    def test_make_post_call_with_wrong_format_data(self):
+        """try making a post call with incomplete data and checking if the view returns status 400"""
+        self.user_data["age"] = "wrong format"
+        self.user_data["dependents"] = "wrong format"
+        response = self.client.post(self.url, json.dumps(self.user_data), content_type='application/json')
+        assert response.status_code == 400
+
     def test_make_get_call(self):
         """try making a get call and checking if the view returns status 405"""
         response = self.client.get(self.url)
