@@ -31,15 +31,15 @@ class QuoteApiView(APIView):
 
             # This is converting the data from a dict to a @dataclass structure
             user_quote_data = from_dict(
-                data_class=models.AnalysisData, 
+                data_class=models.UserData, 
                 data=validated_data, 
                 config=Config(cast=[Enum])
             )
 
-            analysis_result = services.InsuranceService().analysis(user_quote_data)
+            analyze_result = services.InsuranceService().analyze(user_quote_data)
 
             # Before sending it as a response, we need to convert it back to a JSON
-            payload = json.dumps(dataclasses.asdict(analysis_result))
+            payload = json.dumps(dataclasses.asdict(analyze_result))
 
             return Response(payload, status=status.HTTP_200_OK)
 

@@ -44,7 +44,7 @@ class VehicleData:
 
 
 @dataclass
-class AnalysisData:
+class UserData:
     """@dataclass with user input data."""
     age: int
     dependents: int

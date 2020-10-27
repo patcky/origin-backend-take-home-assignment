@@ -9,16 +9,17 @@ class TestInsuranceQuoteSerializers(TestCase):
         pass
 
     def test_validate_empty_data(self):
+        # try passing empty data and checking if the serializer returns an error with the missing fields
         pass
 
     def test_validate_incomplete_data(self):
+        # try passing incomplete data and checking if the serializer returns an error with the missing fields
         pass
 
     def test_validate_complete_data(self):
+        # try passing data with complete data and checking if the serializer validates the fields
         pass
 
-    def test_validate_data_with_zero_vehicles(self):
-        pass
-
-    def test_validate_data_with_zero_houses(self):
+    def test_validate_wrong_format_data(self):
+        # try passing wrong format data and checking if the serializer returns an error
         pass
