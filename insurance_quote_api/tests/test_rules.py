@@ -15,7 +15,6 @@ class TestInsuranceQuoteRules(TestCase):
             risk_questions=[0, 1, 0],
             vehicle=VehicleData(year=2018),
         )
-        self.base_score = 0
 
     def test_less_than_30_years_rule_strategy_is_applied(self):
         """test passing a score and user data to the rule and checking if it was applied"""
