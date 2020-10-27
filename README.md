@@ -1,6 +1,6 @@
 # Insurance Quote API
 
-This project was made as a response to Origin's backend challenge.
+This project was made as a response to [Origin's backend challenge](https://github.com/OriginFinancial/origin-backend-take-home-assignment).
 
 ## Instalation
 
