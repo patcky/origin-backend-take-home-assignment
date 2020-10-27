@@ -7,7 +7,6 @@ class TestInsuranceQuoteService(TestCase):
     @classmethod
     def setUp(self):
         """Generates data sample that will be used in other methods"""
-        # I did the tests in normal pytest format, now I am trying to adapt into django, still wip
         self.user_data = UserData(
             age=35,
             dependents=2,
@@ -69,11 +68,10 @@ class TestInsuranceQuoteService(TestCase):
     def test_user_under_30_years_is_economic(self):
         self.user_data.age = 20
         profile = InsuranceService().analyze(self.user_data)
-        
         assert profile.auto == RiskProfileRecommendation.ECONOMIC
         assert profile.disability == RiskProfileRecommendation.ECONOMIC
         assert profile.home == RiskProfileRecommendation.ECONOMIC
-        assert profile.life == RiskProfileRecommendation.ECONOMIC
+        assert profile.life == RiskProfileRecommendation.REGULAR
 
 
     def test_user_over_60_year_is_ineligible_for_disability_and_life(self):

@@ -23,7 +23,7 @@ class Between30And40YearsRuleStrategy(ScoreRuleStrategy):
         self.__score = score
 
     def calculate(self, user_data):
-        if user_data.age >= 30 or user_data.age <= 40:
+        if user_data.age >= 30 and user_data.age <= 40:
             return self.__score
 
         return 0
