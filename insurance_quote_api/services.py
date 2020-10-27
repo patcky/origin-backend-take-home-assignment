@@ -70,14 +70,15 @@ class DisabilityInsuranceRiskProfile(InsuranceRiskProfile):
             LessThan30YearsRuleStrategy(-2),
             Between30And40YearsRuleStrategy(-1),
             HighIncomeRuleStrategy(-1),
-            HouseMortgagedRuleStrategy(1),
             HasDependentsRuleStrategy(1),
             IsMarriedRuleStrategy(-1),
         ]
 
     def check_eligibility(self, user_data):
         """Checks eligibility criteria"""
-
+        if user_data.house is not None:
+            self.rules.append(HouseMortgagedRuleStrategy(1))
+            
         has_income = user_data.income > 0
         is_under_60_years = user_data.age <= 60
         return has_income and is_under_60_years
